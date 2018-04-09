@@ -1,0 +1,1 @@
+export type TSXMarkup = JSX.Element | null | undefined;
