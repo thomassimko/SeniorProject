@@ -46,7 +46,7 @@ export class Register extends React.Component<IRegisterProps, IRegisterState> {
     }
 
     register() {
-        return <div style={{paddingTop: '75px'}}>
+        return <div style={{paddingTop: '75px'}} onKeyPress={(e) => e.key === 'Enter' ? this.onSubmit() : null}>
             <Column md={4} mdOffset={4}>
                 <div className='login-form'>
                     <div className="title">Onsight</div>

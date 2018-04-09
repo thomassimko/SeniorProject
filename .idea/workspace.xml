@@ -2,14 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3cf76b8-a3b5-40e3-8e4a-fb430dc9c412" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/backEnd/libs/dynamodb-lib.ts" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/backEnd/libs/response-lib.ts" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/backEnd/mocks/create-comp.json" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/backEnd/src/createComp.ts" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/frontEnd/src/js/amplify-config.ts" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/frontEnd/src/js/react-components/bootstrap/FormInput.tsx" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/frontEnd/src/js/react-components/competitions/CreateCompModal.tsx" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/backEnd/src/getComps.ts" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/frontEnd/src/js/react-components/competitions/CompetitionList.tsx" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/frontEnd/src/js/react-components/competitions/CompetitionRouter.tsx" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/frontEnd/src/js/react-components/competitions/ICompetition.ts" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/backEnd/libs/dynamodb-lib.ts" afterPath="$PROJECT_DIR$/backEnd/libs/dynamodb-lib.ts" />
+      <change beforePath="$PROJECT_DIR$/backEnd/serverless.yml" afterPath="$PROJECT_DIR$/backEnd/serverless.yml" />
+      <change beforePath="$PROJECT_DIR$/backEnd/src/createComp.ts" afterPath="$PROJECT_DIR$/backEnd/src/createComp.ts" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/js/amplify-config.ts" afterPath="$PROJECT_DIR$/frontEnd/src/js/amplify-config.ts" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/js/infrastructure/AppRouter.tsx" afterPath="$PROJECT_DIR$/frontEnd/src/js/infrastructure/AppRouter.tsx" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/js/models/CognitoController.ts" afterPath="$PROJECT_DIR$/frontEnd/src/js/models/CognitoController.ts" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/js/react-components/competitions/CreateCompModal.tsx" afterPath="$PROJECT_DIR$/frontEnd/src/js/react-components/competitions/CreateCompModal.tsx" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/js/react-components/login/Login.tsx" afterPath="$PROJECT_DIR$/frontEnd/src/js/react-components/login/Login.tsx" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/js/react-components/login/NewPassword.tsx" afterPath="$PROJECT_DIR$/frontEnd/src/js/react-components/login/NewPassword.tsx" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/src/js/react-components/login/Register.tsx" afterPath="$PROJECT_DIR$/frontEnd/src/js/react-components/login/Register.tsx" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,21 +27,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="serverless.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backEnd/serverless.yml">
+      <file leaf-file-name="CreateCompModal.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontEnd/src/js/react-components/competitions/CreateCompModal.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-52">
-              <caret line="20" column="43" lean-forward="false" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Login.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontEnd/src/js/react-components/login/Login.tsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="114" column="29" lean-forward="false" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="29" />
+            <state relative-caret-position="225">
+              <caret line="36" column="14" lean-forward="false" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -42,57 +39,108 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="amplify-config.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontEnd/src/js/amplify-config.ts">
+      <file leaf-file-name="App.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontEnd/src/js/react-components/App.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="52" lean-forward="true" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
+            <state relative-caret-position="160">
+              <caret line="29" column="12" lean-forward="false" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="46" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backEnd/package.json">
+      <file leaf-file-name="CompetitionList.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontEnd/src/js/react-components/competitions/CompetitionList.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="45">
+              <caret line="3" column="50" lean-forward="false" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CognitoController.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AppRouter.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontEnd/src/js/infrastructure/AppRouter.tsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="97">
+              <caret line="64" column="86" lean-forward="false" selection-start-line="64" selection-start-column="86" selection-end-line="64" selection-end-column="86" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CognitoController.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frontEnd/src/js/models/CognitoController.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="35" lean-forward="false" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+            <state relative-caret-position="495">
+              <caret line="33" column="22" lean-forward="false" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Auth.d.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontEnd/node_modules/aws-amplify/lib/Auth/Auth.d.ts">
+      <file leaf-file-name="CompetitionRouter.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontEnd/src/js/react-components/competitions/CompetitionRouter.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="34" column="5" lean-forward="false" selection-start-line="34" selection-start-column="5" selection-end-line="38" selection-end-column="49" />
+            <state relative-caret-position="180">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="createComp.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/backEnd/src/createComp.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="35" column="44" lean-forward="false" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
+              <folding>
+                <element signature="e#83#135#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dynamodb-lib.ts" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backEnd/libs/dynamodb-lib.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.tsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontEnd/src/js/index.tsx">
+      <file leaf-file-name="LoginRouter.tsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontEnd/src/js/react-components/login/LoginRouter.tsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="34" lean-forward="false" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+            <state relative-caret-position="195">
+              <caret line="13" column="20" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="57" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ICompetition.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/frontEnd/src/js/react-components/competitions/ICompetition.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>isLo</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -108,31 +156,35 @@
         <option value="$PROJECT_DIR$/backEnd/handler.ts" />
         <option value="$PROJECT_DIR$/backEnd/tsconfig.json" />
         <option value="$PROJECT_DIR$/backEnd/src/response-lib.ts" />
-        <option value="$PROJECT_DIR$/backEnd/libs/dynamodb-lib.ts" />
         <option value="$PROJECT_DIR$/backEnd/src/mocks/create-comp.json" />
         <option value="$PROJECT_DIR$/backEnd/mocks/create-comp.json" />
-        <option value="$PROJECT_DIR$/backEnd/src/createComp.ts" />
         <option value="$PROJECT_DIR$/frontEnd/src/js/react-components/competitions/createComp.tsx" />
         <option value="$PROJECT_DIR$/frontEnd/src/js/react-components/competitions/CreateComp.tsx" />
         <option value="$PROJECT_DIR$/frontEnd/src/js/react-components/competitions/FormInput.tsx" />
         <option value="$PROJECT_DIR$/frontEnd/src/js/react-components/App.tsx" />
         <option value="$PROJECT_DIR$/frontEnd/src/amplify-config.ts" />
-        <option value="$PROJECT_DIR$/frontEnd/src/js/infrastructure/AppRouter.tsx" />
         <option value="$PROJECT_DIR$/frontEnd/src/js/models/CognitoConfig.ts" />
-        <option value="$PROJECT_DIR$/frontEnd/src/js/react-components/login/NewPassword.tsx" />
         <option value="$PROJECT_DIR$/frontEnd/src/js/react-components/login/Confirmation.tsx" />
         <option value="$PROJECT_DIR$/frontEnd/src/css/infrastructure/Bootstrap.css" />
-        <option value="$PROJECT_DIR$/frontEnd/src/js/react-components/competitions/CreateCompModal.tsx" />
         <option value="$PROJECT_DIR$/frontEnd/package.json" />
         <option value="$PROJECT_DIR$/frontEnd/webpack.config.js" />
         <option value="$PROJECT_DIR$/frontEnd/src/js/index.tsx" />
         <option value="$PROJECT_DIR$/frontEnd/src/index.html" />
         <option value="$PROJECT_DIR$/frontEnd/src/js/react-components/bootstrap/FormInput.tsx" />
-        <option value="$PROJECT_DIR$/frontEnd/src/js/react-components/login/Register.tsx" />
         <option value="$PROJECT_DIR$/frontEnd/src/js/models/CognitoController.ts" />
         <option value="$PROJECT_DIR$/frontEnd/src/js/react-components/login/Login.tsx" />
-        <option value="$PROJECT_DIR$/backEnd/serverless.yml" />
+        <option value="$PROJECT_DIR$/frontEnd/src/js/react-components/login/Register.tsx" />
+        <option value="$PROJECT_DIR$/frontEnd/src/js/react-components/login/NewPassword.tsx" />
         <option value="$PROJECT_DIR$/frontEnd/src/js/amplify-config.ts" />
+        <option value="$PROJECT_DIR$/backEnd/src/getComps.ts" />
+        <option value="$PROJECT_DIR$/backEnd/serverless.yml" />
+        <option value="$PROJECT_DIR$/frontEnd/src/js/react-components/competitions/ICompetition.ts" />
+        <option value="$PROJECT_DIR$/frontEnd/src/js/react-components/competitions/CompetitionList.tsx" />
+        <option value="$PROJECT_DIR$/frontEnd/src/js/react-components/competitions/CompetitionRouter.tsx" />
+        <option value="$PROJECT_DIR$/frontEnd/src/js/infrastructure/AppRouter.tsx" />
+        <option value="$PROJECT_DIR$/frontEnd/src/js/react-components/competitions/CreateCompModal.tsx" />
+        <option value="$PROJECT_DIR$/backEnd/src/createComp.ts" />
+        <option value="$PROJECT_DIR$/backEnd/libs/dynamodb-lib.ts" />
       </list>
     </option>
   </component>
@@ -184,6 +236,24 @@
             <path>
               <item name="SeniorProjectServerless" type="b2602c69:ProjectViewProjectNode" />
               <item name="SeniorProjectServerless" type="462c0819:PsiDirectoryNode" />
+              <item name="backEnd" type="462c0819:PsiDirectoryNode" />
+              <item name="libs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SeniorProjectServerless" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SeniorProjectServerless" type="462c0819:PsiDirectoryNode" />
+              <item name="backEnd" type="462c0819:PsiDirectoryNode" />
+              <item name="mocks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SeniorProjectServerless" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SeniorProjectServerless" type="462c0819:PsiDirectoryNode" />
+              <item name="backEnd" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SeniorProjectServerless" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SeniorProjectServerless" type="462c0819:PsiDirectoryNode" />
               <item name="frontEnd" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -191,29 +261,6 @@
               <item name="SeniorProjectServerless" type="462c0819:PsiDirectoryNode" />
               <item name="frontEnd" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SeniorProjectServerless" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SeniorProjectServerless" type="462c0819:PsiDirectoryNode" />
-              <item name="frontEnd" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SeniorProjectServerless" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SeniorProjectServerless" type="462c0819:PsiDirectoryNode" />
-              <item name="frontEnd" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-              <item name="infrastructure" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SeniorProjectServerless" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SeniorProjectServerless" type="462c0819:PsiDirectoryNode" />
-              <item name="frontEnd" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-              <item name="react-components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SeniorProjectServerless" type="b2602c69:ProjectViewProjectNode" />
@@ -253,15 +300,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="react-components" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SeniorProjectServerless" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SeniorProjectServerless" type="462c0819:PsiDirectoryNode" />
-              <item name="frontEnd" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="react-components" type="462c0819:PsiDirectoryNode" />
               <item name="competitions" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -288,11 +326,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/frontEnd/src/js/react-components/competitions" />
+      <recent name="$PROJECT_DIR$/backEnd/src" />
       <recent name="$PROJECT_DIR$/frontEnd/src/js/react-components/login" />
       <recent name="$PROJECT_DIR$/frontEnd/src/js" />
       <recent name="$PROJECT_DIR$/frontEnd/src" />
-      <recent name="$PROJECT_DIR$/frontEnd/src/js/react-components/bootstrap" />
-      <recent name="$PROJECT_DIR$/frontEnd/src/js/react-components/competitions" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -410,12 +448,12 @@
       <option name="presentableId" value="Default" />
       <updated>1522800588544</updated>
       <workItem from="1522800590951" duration="1949000" />
-      <workItem from="1523216817709" duration="23834000" />
+      <workItem from="1523216817709" duration="34869000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25783000" />
+    <option name="totallyTimeSpent" value="36818000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="830" extended-state="0" />
@@ -432,7 +470,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292517" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3292517" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292517" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2532189" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -537,14 +575,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backEnd/libs/response-lib.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/backEnd/src/handler.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -561,66 +591,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backEnd/libs/dynamodb-lib.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backEnd/mocks/create-comp.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="5" lean-forward="false" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backEnd/src/createComp.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="32" lean-forward="false" selection-start-line="8" selection-start-column="32" selection-end-line="8" selection-end-column="32" />
-          <folding>
-            <element signature="e#31#83#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontEnd/src/js/react-components/bootstrap/CustomModal.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#31#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontEnd/src/js/react-components/App.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="30" lean-forward="false" selection-start-line="38" selection-start-column="30" selection-end-line="38" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#31#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontEnd/src/js/react-components/RegistrationTable.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#31#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontEnd/src/js/infrastructure/AppRouter.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="491">
-          <caret line="37" column="18" lean-forward="true" selection-start-line="37" selection-start-column="18" selection-end-line="37" selection-end-column="18" />
           <folding>
             <element signature="e#0#31#0" expanded="false" />
           </folding>
@@ -639,16 +613,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
           <caret line="25" column="20" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#31#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontEnd/src/js/react-components/login/NewPassword.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
           <folding>
             <element signature="e#0#31#0" expanded="false" />
           </folding>
@@ -691,16 +655,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontEnd/src/js/react-components/competitions/CreateCompModal.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="42" column="25" lean-forward="false" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#31#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontEnd/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="258">
@@ -735,46 +689,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontEnd/src/js/react-components/login/Register.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-547">
-          <caret line="31" column="37" lean-forward="false" selection-start-line="31" selection-start-column="37" selection-end-line="31" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#31#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/frontEnd/node_modules/aws-amplify/lib/Auth/Auth.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
           <caret line="34" column="5" lean-forward="false" selection-start-line="34" selection-start-column="5" selection-end-line="38" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontEnd/src/js/react-components/login/Login.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="114" column="29" lean-forward="false" selection-start-line="114" selection-start-column="29" selection-end-line="114" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/frontEnd/src/js/index.tsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="34" lean-forward="false" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backEnd/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -803,26 +721,182 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backEnd/serverless.yml">
+    <entry file="file://$PROJECT_DIR$/frontEnd/src/js/index.tsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-52">
-          <caret line="20" column="43" lean-forward="false" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
+        <state relative-caret-position="246">
+          <caret line="18" column="16" lean-forward="false" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#31#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontEnd/src/js/react-components/login/Login.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="99" column="19" lean-forward="false" selection-start-line="99" selection-start-column="19" selection-end-line="99" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#31#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontEnd/src/js/react-components/login/Register.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="118">
+          <caret line="50" column="44" lean-forward="false" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontEnd/src/js/react-components/login/NewPassword.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="32" column="110" lean-forward="false" selection-start-line="32" selection-start-column="110" selection-end-line="32" selection-end-column="110" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontEnd/src/js/amplify-config.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="52" lean-forward="true" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
+        <state relative-caret-position="45">
+          <caret line="3" column="72" lean-forward="false" selection-start-line="3" selection-start-column="72" selection-end-line="3" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backEnd/mocks/create-comp.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="3" lean-forward="false" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backEnd/libs/response-lib.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backEnd/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backEnd/src/getComps.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backEnd/serverless.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="30" column="35" lean-forward="false" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontEnd/src/js/react-components/RegistrationTable.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="17" column="18" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="66" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontEnd/src/js/react-components/competitions/ICompetition.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontEnd/src/js/react-components/App.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="29" column="12" lean-forward="false" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontEnd/src/js/react-components/login/LoginRouter.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="20" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="57" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontEnd/src/js/react-components/competitions/CompetitionList.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="50" lean-forward="false" selection-start-line="3" selection-start-column="50" selection-end-line="3" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/frontEnd/src/js/models/CognitoController.ts">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="22" lean-forward="false" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontEnd/src/js/infrastructure/AppRouter.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="64" column="86" lean-forward="false" selection-start-line="64" selection-start-column="86" selection-end-line="64" selection-end-column="86" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontEnd/src/js/react-components/competitions/CreateCompModal.tsx">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="15" column="35" lean-forward="false" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+          <caret line="36" column="14" lean-forward="false" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/frontEnd/src/js/react-components/competitions/CompetitionRouter.tsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backEnd/src/createComp.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="35" column="44" lean-forward="false" selection-start-line="35" selection-start-column="44" selection-end-line="35" selection-end-column="44" />
+          <folding>
+            <element signature="e#83#135#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/backEnd/libs/dynamodb-lib.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
           <folding />
         </state>
       </provider>

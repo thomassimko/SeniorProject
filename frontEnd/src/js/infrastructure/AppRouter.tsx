@@ -9,6 +9,7 @@ import {SecureRoute} from "../react-components/general/SecureRoute";
 import {ICognitoController, CognitoController} from "../models/CognitoController";
 import {LoginRouter} from "../react-components/login/LoginRouter";
 import { Auth } from "aws-amplify";
+import {CompetitionRouter} from "../react-components/competitions/CompetitionRouter";
 
 export interface IAppRouter {
     navigator: INavigator,
@@ -60,9 +61,14 @@ export class AppRouter extends React.Component<IAppRouter, IAppState> {
         return new LoginRouter(this.props.navigator, this.cognitoController);
     }
 
+    get competitionRouter() {
+        return new CompetitionRouter(this.props.navigator, this.cognitoController, () => this.isLoggedIn());
+    }
+
     routes() {
         return [
             ...this.loginRouter.routes,
+            ...this.competitionRouter.routes,
             <SecureRoute key="app" isAuthed={this.state.isAuthed} exact path='/' component={() => this.app}/>
         ];
     }

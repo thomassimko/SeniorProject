@@ -93,7 +93,7 @@ export class Login extends React.Component<ILoginProps, ILoginState> {
     }
 
     private get loginForm() {
-        return <div>
+        return <div onKeyPress={(e) => e.key === 'Enter' ? this.onAttemptLogin() : null}>
             <form>
                 <FormInput label="Type your email" icon="envelope" type="email" onChange={(e) => this.handleUsernameChange(e)}/>
                 <FormInput label="Type your password" icon="lock" type="password" onChange={(e) => this.handlePasswordChange(e)}/>
@@ -112,7 +112,6 @@ export class Login extends React.Component<ILoginProps, ILoginState> {
     private async confirmUser() {
         this.setState({isLoading: true});
         const confirmed = await this.props.cognitoController.confirmRegistration(this.state.username, this.state.password, this.state.confirmCode);
-        console.log(confirmed)
         if (confirmed) {
             this.redirectUser();
         }

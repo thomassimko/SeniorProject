@@ -34,7 +34,7 @@ export class CreateCompModal extends React.Component<{}, ICreateCompModalState> 
                 }
                 title="Create New Competition"
                 show={this.state.showModal}
-            />;
+            />
         </span>
     }
 
@@ -48,6 +48,8 @@ export class CreateCompModal extends React.Component<{}, ICreateCompModalState> 
     }
 
     private async handleSubmit(event) {
+        this.setState({showModal: false});
+
         event.preventDefault();
 
         try {
@@ -56,7 +58,7 @@ export class CreateCompModal extends React.Component<{}, ICreateCompModalState> 
             });
             console.log("created comp")
         } catch (e) {
-            alert(e);
+            console.error(e);
         }
     }
 

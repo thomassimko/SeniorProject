@@ -26,7 +26,6 @@ export class CognitoController implements ICognitoController {
         try {
             await Auth.signIn(username, password);
             this.login();
-            alert("Logged in");
         } catch (e) {
             return e;
         }
@@ -50,7 +49,7 @@ export class CognitoController implements ICognitoController {
                 location: location
             });
         } catch (e) {
-            alert(e);
+            console.error(e);
         }
     }
 
