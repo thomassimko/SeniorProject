@@ -32,7 +32,7 @@ export async function handler(event, context, callback) {
     ];
 
     try {
-        await dynamoDbLib.createTable(`${data.compName}-${compId}`, compAttr);
+        await dynamoDbLib.createTable(compId, compAttr);
         await dynamoDbLib.call("put", params);
         callback(null, success(params.Item));
     } catch (e) {

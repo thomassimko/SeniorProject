@@ -28,11 +28,23 @@ functions:
   #     domain api call
   # - authorizer: authenticate using the AWS IAM role
   create:
-    handler: src/createComp.main
+    handler: src/createComp.handler
     events:
       - http:
           path: competitions
           method: post
+          cors: true
+          authorizer: aws_iam
+
+  list:
+    # Defines an HTTP API endpoint that calls the main function in list.js
+    # - path: url path is /notes
+    # - method: GET request
+    handler: src/getComps.handler
+    events:
+      - http:
+          path: competitions
+          method: get
           cors: true
           authorizer: aws_iam
 
