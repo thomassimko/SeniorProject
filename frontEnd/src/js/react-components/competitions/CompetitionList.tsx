@@ -1,8 +1,9 @@
 import * as React from 'react';
 import ReactTable from "react-table";
-import {ICompetition} from "./ICompetition";
+import {ICompetition} from "../../models/ICompetition";
 import {CreateCompModal} from "./CreateCompModal";
 import {INavigator} from "../../infrastructure/Navigator";
+import { API } from "aws-amplify";
 
 
 export interface ICompetitionListProps {
@@ -22,6 +23,9 @@ export class CompetitionList extends React.Component<ICompetitionListProps, ICom
             competitions: []
         }
     }
+    async componentDidMount() {
+        this.setState({competitions: await API.get("competitions", "/competitions", {})});
+    }
 
     render() {
         return <div style={{textAlign: "right"}}>
@@ -33,7 +37,7 @@ export class CompetitionList extends React.Component<ICompetitionListProps, ICom
                 getTdProps={(state, rowInfo, column, instance) => {
                     return {
                         onClick: (e, handleOriginal) => {
-                            console.log(rowInfo)
+                            this.props.navigator.navigateTo(`/#/competitions/${rowInfo.original.compName}-${rowInfo.original.compId}`);
                         },
                         style: {cursor: 'pointer'}
                     }

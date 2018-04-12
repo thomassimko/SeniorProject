@@ -1,4 +1,5 @@
 export interface IUserRegistration {
+    competitorId?:string
     firstName?: string,
     lastName?: string,
     gender?: "male" | "female",

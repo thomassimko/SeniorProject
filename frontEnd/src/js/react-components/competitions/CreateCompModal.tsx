@@ -50,11 +50,13 @@ export class CreateCompModal extends React.Component<{}, ICreateCompModalState> 
     private async handleSubmit(event) {
         this.setState({showModal: false});
 
+        console.log(this.state);
+
         event.preventDefault();
 
         try {
             await this.createCompetition({
-                content: this.state.compName
+                compName: this.state.compName
             });
             console.log("created comp")
         } catch (e) {

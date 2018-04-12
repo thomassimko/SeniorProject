@@ -1,9 +1,11 @@
 {
-  "body": "{\"compName\":\"customComp1\"}",
+  "pathParameters": {
+    "compTable": "testComp"
+  },
+  "body": "{\"firstName\": \"test\"}",
   "requestContext": {
     "identity": {
       "cognitoIdentityId": "USER-SUB-1234"
     }
   }
 }
-

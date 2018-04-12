@@ -23,11 +23,6 @@ export async function handler(event, context, callback) {
             AttributeName: "competitorId",
             AttributeType: "S",
             KeyType: "HASH"
-        },
-        {
-            AttributeName: "email",
-            AttributeType: "S",
-            KeyType: "RANGE"
         }
     ];
 

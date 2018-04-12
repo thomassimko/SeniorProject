@@ -18,6 +18,7 @@ provider:
         - dynamodb:PutItem
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
+        - dynamodb:CreateTable
       Resource: "arn:aws:dynamodb:us-west-2:*:*"
 
 functions:
@@ -48,6 +49,32 @@ functions:
           cors: true
           authorizer: aws_iam
 
+  register:
+    handler: src/register/registerCompetitor.handler
+    events:
+      - http:
+          path: competitions/{compTable}
+          method: post
+          cors: true
+          authorizer: aws_iam
+
+  registerList:
+      handler: src/register/getRegisteredCompetitors.handler
+      events:
+        - http:
+            path: competitions/{compTable}
+            method: get
+            cors: true
+            authorizer: aws_iam
+
+  updateCompetitor:
+        handler: src/register/updateCompetitor.handler
+        events:
+          - http:
+              path: competitions/{compTable}/{competitorId}
+              method: put
+              cors: true
+              authorizer: aws_iam
 
 plugins:
   - serverless-plugin-typescript

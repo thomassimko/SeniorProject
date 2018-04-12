@@ -10,6 +10,7 @@ import {ICognitoController, CognitoController} from "../models/CognitoController
 import {LoginRouter} from "../react-components/login/LoginRouter";
 import { Auth } from "aws-amplify";
 import {CompetitionRouter} from "../react-components/competitions/CompetitionRouter";
+import {NewNavigation} from "./NewNavigation";
 
 export interface IAppRouter {
     navigator: INavigator,
@@ -75,7 +76,7 @@ export class AppRouter extends React.Component<IAppRouter, IAppState> {
 
     render() {
         return !this.state.isAuthenticating && <div>
-            <Navigation cognitoController={this.cognitoController}/>
+            <NewNavigation cognitoController={this.cognitoController}/>
             <div style={{padding: '10px', paddingTop: '75px'}}>
                 <HashRouter>
                     <Switch>

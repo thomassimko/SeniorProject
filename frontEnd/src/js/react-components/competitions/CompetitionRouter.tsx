@@ -3,6 +3,7 @@ import {CompetitionList} from "./CompetitionList";
 import {SecureRoute} from "../general/SecureRoute";
 import {INavigator} from "../../infrastructure/Navigator";
 import {ICognitoController} from "../../models/CognitoController";
+import {CompetitionRegistration} from "./registrations/CompetitionRegistration";
 
 
 export class CompetitionRouter {
@@ -21,9 +22,15 @@ export class CompetitionRouter {
         return <CompetitionList navigator={this.navigator}/>
     }
 
+    private competitionRegistration(props) {
+        const table = props.match.params.table;
+        return <CompetitionRegistration compTableId={table}/>
+    }
+
     get routes() {
         return [
-            <SecureRoute key="competitions" isAuthed={this.isAuthed} path="/competitions" component={() => this.competitions}/>,
+            <SecureRoute exact key="competitions" isAuthed={this.isAuthed} path="/competitions" component={() => this.competitions}/>,
+            <SecureRoute key="competitionReg" isAuthed={this.isAuthed} path="/competitions/:table" component={(props) => this.competitionRegistration(props)}/>,
         ];
     }
 }

@@ -1,3 +1,6 @@
+import * as dynamoDbLib from "../libs/dynamodb-lib";
+import { success, failure } from "../libs/response-lib";
+
 export async function handler(event, context, callback) {
     const params = {
         TableName: "competitions",

@@ -7,7 +7,8 @@ export interface IFormInputProps{
     type: "email" | "text" | "password",
     onChange: (e) => void,
     className?: string,
-    icon?: string
+    icon?: string,
+    defaultValue?: string
 }
 
 export class FormInput extends React.Component<IFormInputProps, {}> {
@@ -20,6 +21,7 @@ export class FormInput extends React.Component<IFormInputProps, {}> {
             onChange={(event) => this.props.onChange(event)}
             icon={this.props.icon}
             group
+            defaultValue={this.props.defaultValue}
         />
     }
 }
