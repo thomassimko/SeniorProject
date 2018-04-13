@@ -1,11 +1,15 @@
 .navbar .navbar-nav > li > a:hover, .navbar .navbar-nav>.open>a  {
-    background-color: #02555F !important;
+    background-color: rgb(89, 105, 141) !important;
 }
 
 .navbar, .navbar .navbar-nav > li, .navbar .navbar-nav > li > a:focus {
-    background-color: #026670;
+    background-color: #243a51;
 }
 
 .navbar-default .navbar-nav > li > a, .navbar-default .navbar-brand {
     color: #ffffff !important;
+}
+
+.navbar .dropdown-menu a {
+    font-size: 14px !important;
 }

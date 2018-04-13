@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {IUserRegistration} from "../../../models/IUserRegistration";
 import {RegistrationModal} from "./RegistrationModal";
+import {MDButton} from "../../bootstrap/MDButton";
 
 
 export interface IRegistrationButtonState {
@@ -22,7 +23,7 @@ export class RegistrationButton extends React.Component<IRegistrationButtonProps
 
     render() {
         return <span>
-            <a className="btn btn-default" onClick={() => this.setState({showNewClimberModal: true})}>New Climber</a>
+            <MDButton name="New Climber" onClick={() => this.setState({showNewClimberModal: true})}/>
             <RegistrationModal
                 onClose={() => this.setState({showNewClimberModal: false})}
                 onSave={(data:IUserRegistration) => this.onModalClose(data)}

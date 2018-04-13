@@ -33,11 +33,11 @@ export class Navigation extends React.Component<INavigationProps, {}> {
                     <li><a href="/#/about">About</a></li>
                     {loggedIn ?
                         <li className="dropdown">
-                            <a className="dropdown-toggle" data-toggle="dropdown" href="/#/">Play<span className="caret"/></a>
-                            <ul className="dropdown-menu">
-                                <li><a href="/#/picking">Picking</a></li>
-                                <li><a href="/#/classification">Classification</a></li>
-                            </ul>
+                            {/*<a className="dropdown-toggle" data-toggle="dropdown" href="/#/">Play<span className="caret"/></a>*/}
+                            {/*<ul className="dropdown-menu">*/}
+                                {/*<li><a href="/#/picking">Picking</a></li>*/}
+                                {/*<li><a href="/#/classification">Classification</a></li>*/}
+                            {/*</ul>*/}
                         </li>
                         : null}
                 </ul>

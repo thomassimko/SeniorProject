@@ -10,7 +10,8 @@ import { API } from "aws-amplify";
 export interface IRegistrationTableProps {
     registrations: IUserRegistration[],
     onUpdate: (data:IUserRegistration) => void,
-    compTableId: string
+    compTableId: string,
+    loading: boolean
 }
 
 export interface IRegistrationTableState {
@@ -47,6 +48,7 @@ export class RegistrationTable extends React.Component<IRegistrationTableProps, 
                 noDataText="There are no climbers in the system. Try importing them from a csv file."
                 filterable={true}
                 defaultPageSize={10}
+                loading={this.props.loading}
             />
             <RegistrationModal
                 onClose={() => this.resetSelection()}
@@ -71,21 +73,6 @@ export class RegistrationTable extends React.Component<IRegistrationTableProps, 
         }, {
             Header: 'Last Name',
             accessor: 'lastName' // String-based value accessors!
-        }, {
-            Header: 'Gender',
-            accessor: 'gender'
-        }, {
-            Header: 'Address',
-            accessor: 'address'
-        }, {
-            Header: 'State',
-            accessor: 'state'
-        }, {
-            Header: 'Zip',
-            accessor: 'zip'
-        }, {
-            Header: 'Phone Number',
-            accessor: 'phoneNumber'
         }, {
             Header: 'Email',
             accessor: 'email'

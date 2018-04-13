@@ -16,6 +16,7 @@ export interface ICompetitionRegistrationProps {
 
 export interface ICompetitionRegistrationState {
     registrations: IUserRegistration[],
+    isLoading: boolean
 }
 
 export class CompetitionRegistration extends React.Component<ICompetitionRegistrationProps, ICompetitionRegistrationState> {
@@ -25,7 +26,8 @@ export class CompetitionRegistration extends React.Component<ICompetitionRegistr
     constructor(props:ICompetitionRegistrationProps) {
         super(props);
         this.state = {
-            registrations: []
+            registrations: [],
+            isLoading: true
         }
     }
 
@@ -42,7 +44,7 @@ export class CompetitionRegistration extends React.Component<ICompetitionRegistr
         console.log(this.state)
         return <div style={{marginLeft: '10px', marginRight: '10px'}}>
             <div style={{textAlign: "right"}}>
-                <label className="btn btn-default">
+                <label className="btn btn-mdb-color waves-effect btn-lg">
                     Import<input className="hidden" type="file" accept=".csv" onChange={(event) => this.handleFileUpload(event)}/>
                 </label>
                 <RegistrationButton compTableId={this.props.compTableId} onUpdate={(data:IUserRegistration) => this.registerCompetitorWithDB(data)}/>
@@ -52,6 +54,7 @@ export class CompetitionRegistration extends React.Component<ICompetitionRegistr
                 registrations={this.state.registrations}
                 onUpdate={(data:IUserRegistration) => this.updateCompetitorInfoWithDB(data)}
                 compTableId={this.props.compTableId}
+                loading={this.state.isLoading}
             />
         </div>
     }
@@ -114,6 +117,9 @@ export class CompetitionRegistration extends React.Component<ICompetitionRegistr
 
     private async updateEntries() {
         console.log("updated");
-        this.setState({registrations: await API.get('competitions', `/competitions/${this.props.compTableId}`, {})});
+        this.setState({
+            registrations: await API.get('competitions', `/competitions/${this.props.compTableId}`, {}),
+            isLoading: false
+        });
     }
 }

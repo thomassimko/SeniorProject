@@ -3,6 +3,7 @@ import {IUserRegistration} from "../../../models/IUserRegistration";
 import {CustomModal} from "../../bootstrap/CustomModal";
 import {isNullOrUndefined} from "util";
 import {FormInput} from "../../bootstrap/FormInput";
+import {MDButton} from "../../bootstrap/MDButton";
 
 export interface IRegistrationModalProps {
     onClose: () => void,
@@ -37,9 +38,9 @@ export class RegistrationModal extends React.Component<IRegistrationModalProps, 
                 body={this.registerForm}
                 footer={
                     <div>
-                        <a className="btn btn-default" onClick={() => {this.props.onClose()}}>Cancel</a>
+                        <MDButton name="Cancel" onClick={() => {this.props.onClose()}}/>
                         <span>
-                            <a className="btn btn-default" onClick={() => this.props.onSave(this.state as IUserRegistration)}>Save</a>
+                            <MDButton name="Save" onClick={() => this.props.onSave(this.state as IUserRegistration)}/>
                         </span>
                     </div>
                 }

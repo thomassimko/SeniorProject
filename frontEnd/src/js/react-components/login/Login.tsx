@@ -42,7 +42,7 @@ export class Login extends React.Component<ILoginProps, ILoginState> {
         return <div style={{paddingTop: '75px'}}>
             <Column md={4} mdOffset={4}>
                 <div className='login-form'>
-                    <div className="title">Onsight</div>
+                    <div className="login-title">Onsight</div>
                     {this.state.showConfirm ? this.confirmationForm : this.loginForm}
                 </div>
             </Column>

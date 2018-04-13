@@ -2,6 +2,7 @@ import * as React from 'react';
 import {CustomModal} from "../bootstrap/CustomModal";
 import {FormInput} from "../bootstrap/FormInput";
 import { API } from "aws-amplify";
+import {MDButton} from "../bootstrap/MDButton";
 
 export interface ICreateCompModalState {
     showModal: boolean,
@@ -19,16 +20,15 @@ export class CreateCompModal extends React.Component<{}, ICreateCompModalState> 
 
     render() {
         return <span>
-            <a className="btn btn-default" onClick={() => this.setState({showModal: true})}>Create New Competition</a>
-
+            <MDButton name="Create New Competition" onClick={() => this.setState({showModal: true})}/>
             <CustomModal
                 onHide={() => {}}
                 body={this.createCompForm}
                 footer={
                     <div>
-                        <a className="btn btn-default" onClick={() => this.setState({showModal: false})}>Cancel</a>
+                        <MDButton name="Cancel" onClick={() => this.setState({showModal: false})}/>
                         <span>
-                            <a className="btn btn-default" onClick={(e) => this.handleSubmit(e)}>Create</a>
+                            <MDButton name="Create" onClick={(e) => this.handleSubmit(e)}/>
                         </span>
                     </div>
                 }

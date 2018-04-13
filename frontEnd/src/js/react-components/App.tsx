@@ -1,4 +1,7 @@
 import * as React from 'react';
+import {Button} from "mdbreact";
+import {MDButton} from "./bootstrap/MDButton";
+import {Column} from "./bootstrap/Column";
 
 export interface IAppProps {
 }
@@ -15,7 +18,9 @@ export class App extends React.Component<IAppProps, IAppState> {
     }
 
     render() {
-        return <a className="btn btn-default" href="/#/competitions">Competitions</a>
+        return <Column mdOffset={3} md={4}>
+            <MDButton href="/#/competitions" name="Competitions" block/>
+        </Column>
     }
 
 
