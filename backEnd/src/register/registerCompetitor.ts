@@ -6,10 +6,12 @@ import { success, failure } from "../../libs/response-lib";
 export async function handler(event, context, callback) {
     const data = JSON.parse(event.body);
     const params = {
-        TableName: event.pathParameters.compTable,
+        TableName: "registrations",
         Item: {
             ...data,
-            competitorId: uuid.v1(),
+            registrationId: uuid.v1(),
+            competitionId: event.pathParameters.competitionId,
+            userId: event.requestContext.identity.cognitoIdentityId,
             createdAt: new Date().getTime(),
         }
     };
@@ -20,6 +22,6 @@ export async function handler(event, context, callback) {
         callback(null, success(params.Item));
     } catch (e) {
         console.log(e);
-        callback(null, failure({status: false}));
+        callback(null, failure({e}));
     }
 }

@@ -1,6 +1,6 @@
 {
   "pathParameters": {
-    "compTable": "testComp"
+    "competitionId": "testComp"
   },
   "body": "{\"firstName\": \"test\"}",
   "requestContext": {

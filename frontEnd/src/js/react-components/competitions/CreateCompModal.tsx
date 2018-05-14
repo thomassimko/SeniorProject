@@ -3,13 +3,23 @@ import {CustomModal} from "../bootstrap/CustomModal";
 import {FormInput} from "../bootstrap/FormInput";
 import { API } from "aws-amplify";
 import {MDButton} from "../bootstrap/MDButton";
+import {INavigator} from "../../infrastructure/Navigator";
+import DayPicker from 'react-day-picker';
+import * as moment from 'moment';
+import 'react-day-picker/lib/style.css';
+
+
+export interface ICreateCompModalProps {
+    reloadTable: () => void
+}
 
 export interface ICreateCompModalState {
     showModal: boolean,
-    compName?: string
+    compName?: string,
+    selectedDay?:Date
 }
 
-export class CreateCompModal extends React.Component<{}, ICreateCompModalState> {
+export class CreateCompModal extends React.Component<ICreateCompModalProps, ICreateCompModalState> {
 
     constructor(props) {
         super(props);
@@ -39,12 +49,20 @@ export class CreateCompModal extends React.Component<{}, ICreateCompModalState> 
     }
 
     private get createCompForm() {
-        return <FormInput
-            key={"Competition Name"}
-            label={"Competition Name"}
-            type={"text"}
-            onChange={(event) => this.setState({compName: event.target.value})}
-        />
+        return <div>
+            <FormInput
+                key={"Competition Name"}
+                label={"Competition Name"}
+                type={"text"}
+                onChange={(event) => this.setState({compName: event.target.value})}
+            />
+            <span style={{textAlign: 'center'}}>
+                <DayPicker
+                    selectedDays={this.state.selectedDay}
+                    onDayClick={(day, {selected}) => this.handleDayClick(day, {selected})}
+                />
+            </span>
+        </div>
     }
 
     private async handleSubmit(event) {
@@ -56,12 +74,23 @@ export class CreateCompModal extends React.Component<{}, ICreateCompModalState> 
 
         try {
             await this.createCompetition({
-                compName: this.state.compName
+                compName: this.state.compName,
+                compDate: moment(this.state.selectedDay).unix(),
+                showLocation: false,
+                showSetter: true,
+                showName: false
             });
+            this.props.reloadTable();
             console.log("created comp")
         } catch (e) {
             console.error(e);
         }
+    }
+
+    handleDayClick(day, { selected }) {
+        this.setState({
+            selectedDay: selected ? undefined : day,
+        });
     }
 
     createCompetition(competition) {

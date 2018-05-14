@@ -6,7 +6,7 @@ import {NotFound} from "../react-components/NotFound";
 import {Switch} from "react-router";
 import {INavigator} from "./Navigator";
 import {SecureRoute} from "../react-components/general/SecureRoute";
-import {ICognitoController, CognitoController} from "../models/CognitoController";
+import {ICognitoController, CognitoController} from "../controllers/CognitoController";
 import {LoginRouter} from "../react-components/login/LoginRouter";
 import { Auth } from "aws-amplify";
 import {CompetitionRouter} from "../react-components/competitions/CompetitionRouter";

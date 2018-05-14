@@ -31,7 +31,6 @@ export class RegistrationModal extends React.Component<IRegistrationModalProps, 
 
 
     render() {
-        console.log(this.state);
         return <span>
             <CustomModal
                 onHide={() => {}}

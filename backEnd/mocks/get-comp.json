@@ -1,6 +1,6 @@
 {
   "pathParameters": {
-    "competitionId": "testComp"
+    "id": "testComp"
   },
   "requestContext": {
     "identity": {

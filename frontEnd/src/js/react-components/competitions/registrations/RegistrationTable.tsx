@@ -3,8 +3,6 @@ import {IUserRegistration} from "../../../models/IUserRegistration";
 import ReactTable from "react-table";
 import {RegistrationModal} from "./RegistrationModal";
 import {isNullOrUndefined} from "util";
-var cleaner = require('deep-cleaner');
-import { API } from "aws-amplify";
 
 
 export interface IRegistrationTableProps {

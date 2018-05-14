@@ -3,15 +3,15 @@ import {isNullOrUndefined} from "util";
 import parse = require("csv-parse");
 import {IUserRegistration} from "../../../models/IUserRegistration";
 import {RegistrationTable} from "./RegistrationTable";
-import {RegistrationModal} from "./RegistrationModal";
 import {Button, Input} from "mdbreact"
-import { API } from "aws-amplify";
 import {RegistrationButton} from "./RegistrationButton";
+import {ICompetitorController} from "../../../controllers/CompetitorController";
 var cleaner = require('deep-cleaner');
 
 
 export interface ICompetitionRegistrationProps {
-    compTableId: string
+    compTableId: string,
+    competitorController:ICompetitorController
 }
 
 export interface ICompetitionRegistrationState {
@@ -32,7 +32,7 @@ export class CompetitionRegistration extends React.Component<ICompetitionRegistr
     }
 
     componentDidMount() {
-        this.timer = setInterval(() => this.updateEntries(), 60000);
+        this.timer = setInterval(() => this.updateEntries(), 120000);
         this.updateEntries();
     }
 
@@ -99,26 +99,23 @@ export class CompetitionRegistration extends React.Component<ICompetitionRegistr
     private async registerCompetitorWithDB(competitor: IUserRegistration) {
         cleaner(competitor, "emergencyContact");
         cleaner(competitor);
-        await API.post('competitions', `/competitions/${this.props.compTableId}`, {
-            body: competitor
-        });
+
+        await this.props.competitorController.createCompetitor(this.props.compTableId, competitor);
         this.updateEntries();
     }
 
     private async updateCompetitorInfoWithDB(competitor: IUserRegistration) {
         cleaner(competitor, "emergencyContact");
         cleaner(competitor);
-        console.log(competitor);
-        await API.put('competitions', `/competitions/${this.props.compTableId}/${competitor.competitorId}`, {
-            body: competitor
-        });
-        this.updateEntries();
+        if (competitor.registrationId != null) {
+            await this.props.competitorController.updateCompetitor(this.props.compTableId, competitor.registrationId, competitor);
+            this.updateEntries();
+        }
     }
 
     private async updateEntries() {
-        console.log("updated");
         this.setState({
-            registrations: await API.get('competitions', `/competitions/${this.props.compTableId}`, {}),
+            registrations: await this.props.competitorController.getCompetitors(this.props.compTableId),
             isLoading: false
         });
     }

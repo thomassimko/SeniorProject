@@ -11,7 +11,7 @@
   "devDependencies": {
     "@types/aws-lambda": "0.0.34",
     "aws-sdk": "^2.222.1",
-    "serverless-offline": "^3.20.0",
+    "serverless-offline": "^3.20.3",
     "serverless-plugin-typescript": "^1.1.5"
   },
   "dependencies": {

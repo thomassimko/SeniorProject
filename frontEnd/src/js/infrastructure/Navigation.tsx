@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {Link} from "react-scroll";
-import {ICognitoController} from '../models/CognitoController';
+import {ICognitoController} from '../controllers/CognitoController';
 
 export interface INavigationProps {
     cognitoController:ICognitoController;

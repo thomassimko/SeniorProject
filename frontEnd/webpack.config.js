@@ -22,7 +22,7 @@ module.exports = {
     },
     devtool: "source-map",
     resolve: {
-        extensions: ['.webpack.js', '.web.js', '.ts', '.tsx', '.js', '.json']
+        extensions: ['.webpack.js', '.web.js', '.ts', '.tsx', '.js', '.json', '.css']
     },
     module: {
         rules: [
@@ -47,7 +47,7 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader']
+                loader: "style-loader!css-loader"
             },
             {
                 test: /\.(png|woff|woff2|eot|ttf|svg)$/,

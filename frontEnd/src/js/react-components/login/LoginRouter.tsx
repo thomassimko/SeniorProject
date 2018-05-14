@@ -3,7 +3,7 @@ import {Route} from "react-router-dom";
 import {Login} from "./Login";
 import {ForgotPassword} from "./ForgotPassword";
 import {INavigator} from "../../infrastructure/Navigator";
-import {ICognitoController} from "../../models/CognitoController";
+import {ICognitoController} from "../../controllers/CognitoController";
 import {Register} from "./Register";
 import {Logout} from "./Logout";
 

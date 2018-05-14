@@ -18,18 +18,11 @@ provider:
         - dynamodb:PutItem
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
-        - dynamodb:CreateTable
       Resource: "arn:aws:dynamodb:us-west-2:*:*"
 
 functions:
-  # Defines an HTTP API endpoint that calls the main function in create.js
-  # - path: url path is /notes
-  # - method: POST request
-  # - cors: enabled CORS (Cross-Origin Resource Sharing) for browser cross
-  #     domain api call
-  # - authorizer: authenticate using the AWS IAM role
   create:
-    handler: src/createComp.handler
+    handler: src/competition/createComp.handler
     events:
       - http:
           path: competitions
@@ -38,10 +31,7 @@ functions:
           authorizer: aws_iam
 
   list:
-    # Defines an HTTP API endpoint that calls the main function in list.js
-    # - path: url path is /notes
-    # - method: GET request
-    handler: src/getComps.handler
+    handler: src/competition/getComps.handler
     events:
       - http:
           path: competitions
@@ -49,11 +39,29 @@ functions:
           cors: true
           authorizer: aws_iam
 
+  getComp:
+    handler: src/competition/getComp.handler
+    events:
+      - http:
+          path: competitions/{competitionId}
+          method: get
+          cors: true
+          authorizer: aws_iam
+
+  updateComp:
+    handler: src/competition/updateComp.handler
+    events:
+      - http:
+          path: competitions/{competitionId}
+          method: put
+          cors: true
+          authorizer: aws_iam
+
   register:
     handler: src/register/registerCompetitor.handler
     events:
       - http:
-          path: competitions/{compTable}
+          path: competitions/{competitionId}/register
           method: post
           cors: true
           authorizer: aws_iam
@@ -62,7 +70,7 @@ functions:
       handler: src/register/getRegisteredCompetitors.handler
       events:
         - http:
-            path: competitions/{compTable}
+            path: competitions/{competitionId}/register
             method: get
             cors: true
             authorizer: aws_iam
@@ -71,7 +79,7 @@ functions:
         handler: src/register/updateCompetitor.handler
         events:
           - http:
-              path: competitions/{compTable}/{competitorId}
+              path: competitions/{competitionId}/register/{competitorId}
               method: put
               cors: true
               authorizer: aws_iam

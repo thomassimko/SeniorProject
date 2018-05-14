@@ -2,7 +2,7 @@ import * as React from 'react';
 import {Column} from "../bootstrap/Column";
 import {INavigator} from "../../infrastructure/Navigator";
 import {Modal} from 'react-bootstrap';
-import {ICognitoController} from '../../models/CognitoController';
+import {ICognitoController} from '../../controllers/CognitoController';
 import {FormInput} from "../bootstrap/FormInput";
 
 

@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import 'mocha';
-import {CognitoController} from '../js/models/CognitoController';
+import {CognitoController} from '../js/controllers/CognitoController';
 
 
 

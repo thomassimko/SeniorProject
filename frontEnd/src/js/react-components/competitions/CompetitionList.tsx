@@ -3,11 +3,12 @@ import ReactTable from "react-table";
 import {ICompetition} from "../../models/ICompetition";
 import {CreateCompModal} from "./CreateCompModal";
 import {INavigator} from "../../infrastructure/Navigator";
-import { API } from "aws-amplify";
+import {ICompetitionController} from "../../controllers/CompetitionController";
 
 
 export interface ICompetitionListProps {
     navigator: INavigator;
+    competitonController:ICompetitionController
 
 }
 export interface ICompetitionListState {
@@ -24,12 +25,12 @@ export class CompetitionList extends React.Component<ICompetitionListProps, ICom
         }
     }
     async componentDidMount() {
-        this.setState({competitions: await API.get("competitions", "/competitions", {})});
+        await this.reloadTable();
     }
 
     render() {
         return <div style={{textAlign: "right"}}>
-            <CreateCompModal/>
+            <CreateCompModal reloadTable={() => this.reloadTable()}/>
             <ReactTable
                 className="-highlight -striped"
                 data={this.state.competitions}
@@ -37,7 +38,7 @@ export class CompetitionList extends React.Component<ICompetitionListProps, ICom
                 getTdProps={(state, rowInfo, column, instance) => {
                     return {
                         onClick: (e, handleOriginal) => {
-                            this.props.navigator.navigateTo(`/#/competitions/${rowInfo.original.compName}-${rowInfo.original.compId}`);
+                            this.props.navigator.navigateTo(`/#/competitions/${rowInfo.original.compId}`);
                         },
                         style: {cursor: 'pointer'}
                     }
@@ -60,5 +61,9 @@ export class CompetitionList extends React.Component<ICompetitionListProps, ICom
             Header: 'Comp Date',
             accessor: 'compDate'
         }]
+    }
+
+    private async reloadTable() {
+        this.setState({competitions: await this.props.competitonController.getCompetitionList()});
     }
 }
