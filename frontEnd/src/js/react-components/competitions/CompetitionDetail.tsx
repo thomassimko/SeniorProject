@@ -22,6 +22,7 @@ export interface ICompetitionDetailProps {
 export interface ICompetitionDetailState {
     selectedTab: number,
     competition?: ICompetition,
+    routes:IRoute[]
 }
 
 
@@ -34,15 +35,15 @@ export class CompetitionDetail extends React.Component<ICompetitionDetailProps, 
     constructor(props) {
         super(props);
         this.state = {
-            selectedTab: 1
+            selectedTab: 1,
+            routes: []
         }
     }
 
-    async componentDidMount() {
-        console.log(this.props.compTableId);
-        const comp = await this.props.competitionController.getCompetition(this.props.compTableId);
-        console.log(comp);
-        this.setState({competition: comp})
+    componentDidMount() {
+        this.loadCompetition();
+        this.loadRoutes();
+
     }
 
     render() {
@@ -69,8 +70,9 @@ export class CompetitionDetail extends React.Component<ICompetitionDetailProps, 
                         <RouteSpreadsheet
                             competition={this.state.competition}
                             compTableId={this.props.compTableId}
-                            initialData={[]}
-                            routeController={this.props.routeController}
+                            routes={this.state.routes}
+                            reloadData={() => this.loadRoutes()}
+                            updateRoutes={(routes:IRoute[]) => this.updateRoutes(routes)}
                         />
                     </Tab>
                     <Tab eventKey={4} title="Registration" style={this.tabStyle}>
@@ -82,13 +84,17 @@ export class CompetitionDetail extends React.Component<ICompetitionDetailProps, 
                     <Tab eventKey={5} title="Scorecard" style={this.tabStyle}>
                         <Scorecard
                             competition={this.state.competition}
-                            compTableId={this.props.compTableId}
-                            routeController={this.props.routeController}
+                            routes={this.state.routes}
                         />
                     </Tab>
                 </Tabs>
             }
         </div>
+    }
+
+    async updateRoutes(newRoutes:IRoute[]) {
+        await this.props.routeController.updateRoutes(this.props.compTableId, newRoutes);
+        this.setState({routes: newRoutes});
     }
 
     private handleTabChange(e) {
@@ -97,5 +103,13 @@ export class CompetitionDetail extends React.Component<ICompetitionDetailProps, 
 
     private onUpdateComp(competition:ICompetition) {
         this.setState({competition:competition});
+    }
+
+    private async loadRoutes() {
+        this.setState({routes: await this.props.routeController.getRoutes(this.props.compTableId)})
+    }
+
+    private async loadCompetition() {
+        this.setState({competition: await this.props.competitionController.getCompetition(this.props.compTableId)})
     }
 }

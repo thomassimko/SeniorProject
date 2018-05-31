@@ -11,32 +11,20 @@ import {Row} from "../bootstrap/Row";
 
 
 export interface IScorecardProps {
-    routeController:IRouteController,
     competition:ICompetition,
-    compTableId: string
-}
-
-export interface IScorecardState {
     routes:IRoute[]
 }
 
 
-export class Scorecard extends React.Component<IScorecardProps, IScorecardState> {
+export class Scorecard extends React.Component<IScorecardProps, {}> {
 
     constructor(props) {
         super(props);
-        this.state = {
-            routes: []
-        }
-    }
-
-    componentDidMount() {
-        this.loadData();
     }
 
     render() {
         return <div>
-            <MDButton name="Download Scorecard" onClick={() => generateScorecard(this.state.routes, this.props.competition)}/>
+            <MDButton name="Download Scorecard" onClick={() => generateScorecard(this.props.routes, this.props.competition)}/>
             <hr/>
             <div id="divToPrint">
                 <Row>
@@ -51,10 +39,10 @@ export class Scorecard extends React.Component<IScorecardProps, IScorecardState>
                     </Column>
                 </Row>
                 <ReactTable
-                    data={this.state.routes}
+                    data={this.props.routes}
                     columns={this.columns()}
                     noDataText="There are no saved routes. To add routes, please go to the Routes tab."
-                    pageSize={this.state.routes.length}
+                    pageSize={this.props.routes.length}
                     showPaginationTop={false}
                     showPaginationBottom={false}
                     style={{textAlign: "center"}}
@@ -105,11 +93,6 @@ export class Scorecard extends React.Component<IScorecardProps, IScorecardState>
 
         return colData;
 
-    }
-
-    private async loadData() {
-        const routes = await this.props.routeController.getRoutes(this.props.compTableId);
-        this.setState({routes: routes.filter(route => !isNullOrUndefined(route.points))});
     }
 
 }

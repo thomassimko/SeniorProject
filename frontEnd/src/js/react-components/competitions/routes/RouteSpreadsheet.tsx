@@ -6,10 +6,11 @@ import {ICompetition} from "../../../models/ICompetition";
 import {IRouteController} from "../../../controllers/RouteController";
 
 export interface IRouteSpreadsheetProps {
-    initialData: IRoute[],
     competition:ICompetition,
-    routeController:IRouteController,
     compTableId: string
+    routes:IRoute[],
+    updateRoutes: (routes:IRoute[]) => void,
+    reloadData:() => void
 }
 
 export interface IRouteSpreadsheetState {
@@ -25,13 +26,13 @@ export class RouteSpreadsheet extends React.Component<IRouteSpreadsheetProps, IR
         super(props);
 
         this.state = {
-            rows: this.formatRows(props.initialData ? props.initialData : []),
+            rows: this.formatRows(props.routes ? props.routes : []),
             blurCurrentFocus: false,
         };
     }
 
-    componentDidMount() {
-        this.loadData();
+    componentWillReceiveProps(props) {
+        this.setState({rows: this.formatRows(props.routes)})
     }
 
     render() {
@@ -39,11 +40,11 @@ export class RouteSpreadsheet extends React.Component<IRouteSpreadsheetProps, IR
             <div style={{textAlign: 'right'}}>
                 <MDButton
                     name={"Save"}
-                    onClick={() => this.uploadData()}
+                    onClick={() => this.props.updateRoutes(this.state.rows)}
                 />
                 <MDButton
                     name={"Cancel"}
-                    onClick={() => this.loadData()}
+                    onClick={() => this.props.reloadData()}
                 />
             </div>
             <Grid
@@ -113,14 +114,5 @@ export class RouteSpreadsheet extends React.Component<IRouteSpreadsheetProps, IR
                 />,
             id: field
         }
-    }
-
-    private uploadData() {
-        this.props.routeController.updateRoutes(this.props.compTableId, this.state.rows);
-    }
-
-    private async loadData() {
-        const routes = await this.props.routeController.getRoutes(this.props.compTableId);
-        this.setState({rows: this.formatRows(routes)});
     }
 }
