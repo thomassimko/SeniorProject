@@ -1,8 +1,8 @@
 export interface IRoute {
-    id: number,
+    routeId: number,
     name?: string,
     number?: string,
     points?: string,
     setter?: string,
-    location?: string
+    location?: string,
 }

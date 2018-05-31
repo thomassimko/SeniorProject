@@ -32,16 +32,16 @@ export class CompetitionRegistration extends React.Component<ICompetitionRegistr
     }
 
     componentDidMount() {
-        this.timer = setInterval(() => this.updateEntries(), 120000);
+        //this.timer = setInterval(() => this.updateEntries(), 120000);
         this.updateEntries();
     }
 
     componentWillUnmount() {
-        clearInterval(this.timer);
+        //clearInterval(this.timer);
     }
 
     render() {
-        console.log(this.state)
+        //console.log(this.state)
         return <div style={{marginLeft: '10px', marginRight: '10px'}}>
             <div style={{textAlign: "right"}}>
                 <label className="btn btn-mdb-color waves-effect btn-lg">

@@ -6,6 +6,7 @@ import {ICognitoController} from "../../controllers/CognitoController";
 import {CompetitionDetail} from "./CompetitionDetail";
 import {CompetitionController} from "../../controllers/CompetitionController";
 import {CompetitorController} from "../../controllers/CompetitorController";
+import {RouteController} from "../../controllers/RouteController";
 
 
 export class CompetitionRouter {
@@ -33,6 +34,7 @@ export class CompetitionRouter {
             compTableId={table}
             competitionController={this.competitionController}
             competitorController={this.competitorController}
+            routeController={this.routeController}
         />
     }
 
@@ -42,6 +44,10 @@ export class CompetitionRouter {
 
     get competitorController() {
         return new CompetitorController();
+    }
+
+    get routeController() {
+        return new RouteController();
     }
 
     get routes() {

@@ -17,8 +17,7 @@ export class RouteController implements IRouteController {
     }
 
     async getRoutes(competitionId:string) {
-        await API.put('competitions', `/competitions/${competitionId}/routes`, {});
-        return await API.get('competitions', `/competitions/${competitionId}/register`, {})
+        return await API.get('competitions', `/competitions/${competitionId}/routes`, {});
     }
 
 }

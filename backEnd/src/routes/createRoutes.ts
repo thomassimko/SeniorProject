@@ -1,34 +1,32 @@
-import {IRoute} from "../../../frontEnd/src/js/models/IRoute";
-
-const uuid = require("uuid");
-
 import * as dynamoDbLib from "../../libs/dynamodb-lib";
 import { success, failure } from "../../libs/response-lib";
 
 export async function handler(event, context, callback) {
-    const data:IRoute[] = JSON.parse(event.body);
-    const puts = data.map(route => {
+    const data = JSON.parse(event.body);
+    const batchRequest = data.map(route => {
         return {
             PutRequest: {
                 Item: {
                     ...route,
-                    routeId: uuid.v1(),
                     competitionId: event.pathParameters.competitionId,
                     userId: event.requestContext.identity.cognitoIdentityId,
                 }
             }
         }
     });
-    const params = {
-        RequestItems: {
-            "routes": puts
-        }
-    };
-
-
+    console.log(batchRequest[0].PutRequest.Item);
     try {
-        await dynamoDbLib.call("writeBatch", params);
-        callback(null, success(params));
+        for (var i = 0; i < batchRequest.length / 25; i++) {
+            const startIndex = i * 25;
+            const params = {
+                RequestItems: {
+                    "routes": batchRequest.slice(startIndex, startIndex + 25)
+                }
+            };
+            console.log(batchRequest.slice(startIndex, startIndex + 25));
+            await dynamoDbLib.call("batchWrite", params);
+        }
+        callback(null, success(batchRequest));
     } catch (e) {
         console.log(e);
         callback(null, failure({e}));

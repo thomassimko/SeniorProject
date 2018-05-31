@@ -39,7 +39,7 @@ export class CompetitionSetup extends React.Component<ICompetitionSetupProps, IC
     }
 
     get routeSettings() {
-        return <Card>
+        return <Card style={{backgroundColor: "#eeeeee"}}>
             <CardBody style={{padding: '15px'}}>
                 <CardTitle>Route Settings</CardTitle>
                 <form>

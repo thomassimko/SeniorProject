@@ -31,6 +31,7 @@ export class Navigation extends React.Component<INavigationProps, {}> {
         return <div className="collapse navbar-collapse" id="myNavbar">
                 <ul className="nav navbar-nav">
                     <li><a href="/#/about">About</a></li>
+                    {loggedIn ? <li><a href="/#/competitions">Competitions</a></li> : null}
                     {loggedIn ?
                         <li className="dropdown">
                             {/*<a className="dropdown-toggle" data-toggle="dropdown" href="/#/">Play<span className="caret"/></a>*/}

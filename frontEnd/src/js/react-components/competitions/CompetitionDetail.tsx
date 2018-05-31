@@ -7,6 +7,9 @@ import {ICompetitionController} from "../../controllers/CompetitionController";
 import {ICompetition} from "../../models/ICompetition";
 import {isNullOrUndefined} from "util";
 import {ICompetitorController} from "../../controllers/CompetitorController";
+import {IRouteController} from "../../controllers/RouteController";
+import {Scorecard} from "./Scorecard";
+import {IRoute} from "../../models/IRoute";
 
 
 
@@ -14,10 +17,11 @@ export interface ICompetitionDetailProps {
     compTableId: string;
     competitionController:ICompetitionController;
     competitorController:ICompetitorController;
+    routeController:IRouteController;
 }
 export interface ICompetitionDetailState {
     selectedTab: number,
-    competition?: ICompetition
+    competition?: ICompetition,
 }
 
 
@@ -30,7 +34,7 @@ export class CompetitionDetail extends React.Component<ICompetitionDetailProps, 
     constructor(props) {
         super(props);
         this.state = {
-            selectedTab: 1,
+            selectedTab: 1
         }
     }
 
@@ -63,14 +67,23 @@ export class CompetitionDetail extends React.Component<ICompetitionDetailProps, 
                     </Tab>
                     <Tab eventKey={3} title="Routes" style={this.tabStyle}>
                         <RouteSpreadsheet
-                            competiton={this.state.competition}
+                            competition={this.state.competition}
+                            compTableId={this.props.compTableId}
                             initialData={[]}
+                            routeController={this.props.routeController}
                         />
                     </Tab>
                     <Tab eventKey={4} title="Registration" style={this.tabStyle}>
                         <CompetitionRegistration
                             compTableId={this.props.compTableId}
                             competitorController={this.props.competitorController}
+                        />
+                    </Tab>
+                    <Tab eventKey={5} title="Scorecard" style={this.tabStyle}>
+                        <Scorecard
+                            competition={this.state.competition}
+                            compTableId={this.props.compTableId}
+                            routeController={this.props.routeController}
                         />
                     </Tab>
                 </Tabs>

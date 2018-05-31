@@ -3,20 +3,18 @@ import { Grid, Input, Select } from 'react-spreadsheet-grid'
 import {IRoute} from "../../../models/IRoute";
 import {MDButton} from "../../bootstrap/MDButton";
 import {ICompetition} from "../../../models/ICompetition";
+import {IRouteController} from "../../../controllers/RouteController";
 
 export interface IRouteSpreadsheetProps {
     initialData: IRoute[],
-    competiton:ICompetition
+    competition:ICompetition,
+    routeController:IRouteController,
+    compTableId: string
 }
 
 export interface IRouteSpreadsheetState {
     rows: IRoute[],
-    columns: any[],
     blurCurrentFocus: boolean
-}
-
-export interface IRouteSpreadsheetProps {
-    initialData: IRoute[],
 }
 
 export class RouteSpreadsheet extends React.Component<IRouteSpreadsheetProps, IRouteSpreadsheetState> {
@@ -27,10 +25,13 @@ export class RouteSpreadsheet extends React.Component<IRouteSpreadsheetProps, IR
         super(props);
 
         this.state = {
-            rows: props.initialData ? props.initialData : this.initialRows,
-            columns: this.columns,
+            rows: this.formatRows(props.initialData ? props.initialData : []),
             blurCurrentFocus: false,
         };
+    }
+
+    componentDidMount() {
+        this.loadData();
     }
 
     render() {
@@ -46,9 +47,9 @@ export class RouteSpreadsheet extends React.Component<IRouteSpreadsheetProps, IR
                 />
             </div>
             <Grid
-                columns={this.state.columns}
+                columns={this.columns()}
                 rows={this.state.rows}
-                getRowKey={row => row.id}
+                getRowKey={row => row.routeId}
                 blurCurrentFocus={this.state.blurCurrentFocus}
                 disabledCellChecker={(row, columnId) => columnId === 'number'}
                 isColumnsResizable
@@ -70,25 +71,32 @@ export class RouteSpreadsheet extends React.Component<IRouteSpreadsheetProps, IR
         });
     }
 
-    private get columns() {
-        return [
+    private columns() {
+        const colData = [
             {
                 title: () => "Number",
-                value: (row, { focus }) => <span className="text-center">{row.id}</span>,
+                value: (row, { focus }) => <span className="text-center">{row.routeId}</span>,
                 id: "number"
             },
             this.mapToInputColumn("Points", "points"),
-            this.props.competiton.showName ? this.mapToInputColumn("Name", "name") : null,
-            this.props.competiton.showSetter ? this.mapToInputColumn("Setter", "setter") : null,
-            this.props.competiton.showLocation ? this.mapToInputColumn("Location", "location") : null
-        ]
+        ];
+        if (this.props.competition.showName) {
+            colData.push(this.mapToInputColumn("Name", "name"))
+        }
+        if (this.props.competition.showSetter) {
+            colData.push(this.mapToInputColumn("Setter", "setter"))
+        }
+        if (this.props.competition.showLocation) {
+            colData.push(this.mapToInputColumn("Location", "location"))
+        }
+        return colData
     }
 
-    private get initialRows():IRoute[] {
-        const rows:IRoute[] = [];
-        for (var i = 1; i <= this.maxSize; i++) {
+    private formatRows(initialData:IRoute[]):IRoute[] {
+        const rows:IRoute[] = initialData;
+        for (var i = rows.length + 1; i <= this.maxSize; i++) {
             rows.push({
-                id: i
+                routeId: i
             });
         }
         return rows;
@@ -101,17 +109,18 @@ export class RouteSpreadsheet extends React.Component<IRouteSpreadsheetProps, IR
                 <Input
                     value={row[field]}
                     focus={focus}
-                    onChange={(value) => this.onFieldChange(row.id, field, value)}
+                    onChange={(value) => this.onFieldChange(row.routeId, field, value)}
                 />,
             id: field
         }
     }
 
     private uploadData() {
-
+        this.props.routeController.updateRoutes(this.props.compTableId, this.state.rows);
     }
 
-    private loadData() {
-
+    private async loadData() {
+        const routes = await this.props.routeController.getRoutes(this.props.compTableId);
+        this.setState({rows: this.formatRows(routes)});
     }
 }

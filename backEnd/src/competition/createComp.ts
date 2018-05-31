@@ -12,7 +12,7 @@ export async function handler(event, context, callback) {
         Item: {
             ...data,
             userId: event.requestContext.identity.cognitoIdentityId,
-            compId: `${data.compName}-${compId}`,
+            compId: `${data.compName.replace(" ", "_")}-${compId}`,
             createdAt: new Date().getTime()
         }
     };

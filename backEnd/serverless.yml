@@ -18,6 +18,7 @@ provider:
         - dynamodb:PutItem
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
+        - dynamodb:BatchWriteItem
       Resource: "arn:aws:dynamodb:us-west-2:*:*"
 
 functions:
@@ -80,6 +81,24 @@ functions:
         events:
           - http:
               path: competitions/{competitionId}/register/{competitorId}
+              method: put
+              cors: true
+              authorizer: aws_iam
+
+  getRoutes:
+        handler: src/routes/getRoutes.handler
+        events:
+          - http:
+              path: competitions/{competitionId}/routes
+              method: get
+              cors: true
+              authorizer: aws_iam
+
+  createRoutes:
+        handler: src/routes/createRoutes.handler
+        events:
+          - http:
+              path: competitions/{competitionId}/routes
               method: put
               cors: true
               authorizer: aws_iam
